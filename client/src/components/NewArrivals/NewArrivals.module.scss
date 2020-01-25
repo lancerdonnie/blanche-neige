@@ -1,0 +1,15 @@
+.newarrivals {
+  background-color: #ccc;
+
+  .arrivalsbox {
+    height: 60vh;
+    display: grid;
+    grid-template-columns: repeat(3, 320px);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+    justify-content: center;
+  }
+}
+.arrival {
+  background: url('https://via.placeholder.com/100/FFFFFF');
+}
