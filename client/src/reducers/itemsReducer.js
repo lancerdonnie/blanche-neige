@@ -3,22 +3,30 @@ const initialState = {
     {
       price: 100,
       name: 'Black Stripes',
-      link: 'https://via.placeholder.com/150X250'
+      link: 'https://via.placeholder.com/150X250',
+      category: 'cloth',
+      type: 'WOMEN'
     },
     {
       price: 100,
       name: 'Black Stripes',
-      link: 'https://via.placeholder.com/150X250'
+      link: 'https://via.placeholder.com/150X250',
+      category: 'cloth',
+      type: 'WOMEN'
     },
     {
       price: 100,
       name: 'Black Stripes',
-      link: 'https://via.placeholder.com/150X250'
+      link: 'https://via.placeholder.com/150X250',
+      category: 'cloth',
+      type: 'WOMEN'
     },
     {
       price: 100,
       name: 'Black Stripes',
-      link: 'https://via.placeholder.com/150X250'
+      link: 'https://via.placeholder.com/150X250',
+      category: 'cloth',
+      type: 'WOMEN'
     }
   ]
 };

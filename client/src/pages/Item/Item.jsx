@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react';
-
-const Item = () => {
+import styles from './Item.module.scss';
+const Item = props => {
+  console.log(props.match.params.id);
   return (
     <Fragment>
-      <div class='previous'></div>
-      <div class='next'></div>
-      {/* <div class='product card'>
+      <div className={styles.previous}></div>
+      <div className={styles.next}></div>
+      <div className={styles.product + ' card'}>
         <div></div>
         <div>
           <p>SHOES</p>
@@ -20,24 +21,24 @@ const Item = () => {
             molestiae numquam nulla debitis dolores veritatis dolorem, a
             perspiciatis. Corrupti neque, unde enim sed dicta cum accusantium.
           </p>
-          <div class='choice'>
+          <div className={styles.choice}>
             <div></div>
             <div></div>
             <div></div>
           </div>
           <p>SELECT SIZE</p>
-          <div class='check'>
-            <div class='check1 card'>
+          <div className={styles.check}>
+            <div className={styles.check1 + ' card'}>
               <span>UK 2.5</span>
-              <i class='fas fa-chevron-down'></i>
+              <i className='fas fa-chevron-down'></i>
             </div>
-            <div class='check2'>
-              <i class='fas fa-cart-plus'></i>
+            <div className={styles.check2}>
+              <i className='fas fa-cart-plus'></i>
               <span>Add to cart</span>
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </Fragment>
   );
 };
