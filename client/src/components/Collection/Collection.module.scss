@@ -1,33 +1,58 @@
 .collection {
+  height: var(--height);
+  padding: 60px;
   .collectionbox {
+    cursor: pointer;
     margin: 0 auto;
     max-width: 60%;
-    height: 60vh;
+    // max-height: 100%;
     display: grid;
+    gap: 5px;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 80px);
     grid-template-areas:
       'item1 item1 item2 item2'
       'item1 item1 item2 item2'
       'item1 item1 item4 item4'
       'item3 item3 item4 item4'
       'item3 item3 item4 item4';
-
+    // justify-content: center;
+    div {
+      background: center/cover;
+    }
     div:nth-child(1) {
       grid-area: item1;
-      background: url('https://via.placeholder.com/150');
+      background: url('https://pixabay.com/get/54e5dc444852a914f1dc8460825668204022dfe05b51714b7c2a7cd2/blouse-2597205_640.jpg')
+        center/cover;
+      // transition: 1s ease-in;
+      &:hover {
+        background: none;
+        text-align: center;
+        align-self: center;
+      }
     }
     div:nth-child(2) {
       grid-area: item2;
-      background: url('https://via.placeholder.com/150/0000FF');
+      background: url('https://pixabay.com/get/55e7d744435bab14f1dc8460825668204022dfe05b51714a752e7ed6/leather-craft-3727997_640.jpg')
+        center/cover;
     }
     div:nth-child(3) {
       grid-area: item3;
-      background: url('https://via.placeholder.com/150/FF0000');
+      background: url('https://pixabay.com/get/54e0d24a4354a814f1dc8460825668204022dfe05b51714b7c287ed5/argentine-tango-2079964_640.jpg')
+        center/cover;
     }
     div:nth-child(4) {
       grid-area: item4;
-      background: url('https://via.placeholder.com/150/000');
+      background: url('https://pixabay.com/get/57e9d0454f56b10ff3d89938b977692b083edbed535172497c2b7a/hands-195654_640.jpg')
+        center/cover;
     }
+    // div:nth-child(5) {
+    //   grid-area: item5;
+
+    // }
+    // div:nth-child(6) {
+    //   grid-area: item;
+
+    // }
   }
 }

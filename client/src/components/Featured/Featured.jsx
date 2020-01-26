@@ -1,18 +1,24 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import styles from './Featured.module.scss';
-const Featured = props => {
-  console.log(props);
+const Featured = ({ featured, handleClick }) => {
   return (
-    <div class={styles.featured}>
-      <p class='head1'>FEATURED</p>
-      <div class={styles.featuredbox}>
-        {props.featured.map(item => {
+    <div className={styles.featured}>
+      <p className='head1'>FEATURED</p>
+      <div className={styles.featuredbox}>
+        {featured.map(item => {
           return (
-            <div class='card'>
-              <img src={item.link} alt='' srcset='' />
-              <p>{item.name}</p>
-              <p>{item.price}$</p>
+            <div
+              onClick={() => {
+                handleClick(item.category, item.id);
+              }}
+              key={item.id}
+              className='card'
+            >
+              <img src={item.link} alt='' />
+              <div>
+                <p>{item.name}</p>
+                <p>{item.price}$</p>
+              </div>
             </div>
           );
         })}
@@ -20,9 +26,4 @@ const Featured = props => {
     </div>
   );
 };
-const mapStateToProps = ({ items: { featured } }) => {
-  return {
-    featured
-  };
-};
-export default connect(mapStateToProps)(Featured);
+export default Featured;

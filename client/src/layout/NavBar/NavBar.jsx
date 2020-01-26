@@ -9,8 +9,11 @@ const NavBar = () => {
       </div>
       <div>
         <ul>
-          <li>Home</li>
-          <Link to=''>
+          <Link to='/'>
+            <li>Home</li>
+          </Link>
+
+          <Link to='/categories'>
             <li>Shop</li>
           </Link>
           <li>About</li>
@@ -19,8 +22,8 @@ const NavBar = () => {
       </div>
       <div>
         <span>SIGN IN</span>
-        <i class='fas fa-toggle-off'></i>
-        <i class='fas fa-shopping-cart'></i>
+        <i className='fas fa-toggle-off'></i>
+        <i className='fas fa-shopping-cart'></i>
       </div>
     </nav>
   );

@@ -4,21 +4,21 @@ import './Footer.module.scss';
 const Footer = () => {
   return (
     <footer>
-      <div class='socials'>
+      <div className='socials'>
         <Link to=''>
-          <i class='fab fa-soundcloud social'></i>
+          <i className='fab fa-soundcloud social'></i>
         </Link>
         <Link to=''>
-          <i class='fab fa-instagram social'></i>
+          <i className='fab fa-instagram social'></i>
         </Link>
         <Link to=''>
-          <i class='fab fa-twitter social'></i>
+          <i className='fab fa-twitter social'></i>
         </Link>
         <Link to=''>
-          <i class='fab fa-facebook-f social'></i>
+          <i className='fab fa-facebook-f social'></i>
         </Link>
       </div>
-      <div class='site-map'>
+      <div className='site-map'>
         <p>Site Map</p>
         <ul>
           <li>Home</li>

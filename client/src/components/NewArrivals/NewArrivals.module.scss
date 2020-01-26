@@ -1,6 +1,7 @@
 .newarrivals {
   background-color: #ccc;
-
+  padding: 60px;
+  height: var(--height);
   .arrivalsbox {
     height: 60vh;
     display: grid;

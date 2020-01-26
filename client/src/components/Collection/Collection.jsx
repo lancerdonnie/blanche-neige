@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Collection.module.scss';
 
 const Collection = () => {
-  console.log(styles);
   return (
     <div className={styles.collection}>
       <p className='head1'>COLLECTION</p>
@@ -11,6 +10,8 @@ const Collection = () => {
         <div></div>
         <div></div>
         <div></div>
+        {/* <div>WOMEN</div>
+        <div>MEN</div> */}
       </div>
     </div>
   );
