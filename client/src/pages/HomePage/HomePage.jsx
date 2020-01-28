@@ -8,27 +8,28 @@ import Collection from '../../components/Collection/Collection';
 import Featured from '../../components/Featured/Featured';
 
 const HomePage = props => {
-  const { history, featured } = props;
+  const { history, featured, random } = props;
   const handleClick = (category, id) => {
-    history.push(`${category}/${id}`);
+    history.push(`/categories/${category}/${id}`);
   };
   return (
     <Fragment>
       <header>
-        <img src={undraw} alt='' srcset='' />
+        <img src={undraw} alt='' />
         <div>
           <img src={fashion} alt='' />
         </div>
       </header>
       <Featured handleClick={handleClick} featured={featured} />
       <Collection />
-      <NewArrivals />
+      <NewArrivals handleClick={handleClick} random={random} />
     </Fragment>
   );
 };
-const mapStateToProps = ({ items: { featured } }) => {
+const mapStateToProps = ({ items: { featured, random } }) => {
   return {
-    featured
+    featured,
+    random
   };
 };
 export default connect(mapStateToProps)(HomePage);

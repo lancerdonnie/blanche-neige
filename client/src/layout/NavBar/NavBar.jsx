@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.module.scss';
-const NavBar = () => {
-  return (
+import withLocation from '../../wrappers/withLocation';
+const NavBar = ({ data }) => {
+  return data !== '/sign' ? (
     <nav>
       <div>
-        <span>BLANCHE</span>
+        <Link to='/'>
+          <span>BLANCHE</span>
+        </Link>
       </div>
       <div>
         <ul>
@@ -13,7 +16,7 @@ const NavBar = () => {
             <li>Home</li>
           </Link>
 
-          <Link to='/categories'>
+          <Link to='/categories/clothes'>
             <li>Shop</li>
           </Link>
           <li>About</li>
@@ -21,12 +24,17 @@ const NavBar = () => {
         </ul>
       </div>
       <div>
-        <span>SIGN IN</span>
+        <Link to='/signin'>
+          <span>SIGN IN</span>
+        </Link>
+
         <i className='fas fa-toggle-off'></i>
-        <i className='fas fa-shopping-cart'></i>
+        <Link to='/cart'>
+          <i className='fas fa-shopping-cart'></i>
+        </Link>
       </div>
     </nav>
-  );
+  ) : null;
 };
 
-export default NavBar;
+export default withLocation(NavBar);

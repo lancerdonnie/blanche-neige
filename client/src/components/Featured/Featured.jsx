@@ -5,21 +5,23 @@ const Featured = ({ featured, handleClick }) => {
     <div className={styles.featured}>
       <p className='head1'>FEATURED</p>
       <div className={styles.featuredbox}>
-        {featured.map(item => {
+        {featured.map((item, i) => {
           return (
-            <div
-              onClick={() => {
-                handleClick(item.category, item.id);
-              }}
-              key={item.id}
-              className='card'
-            >
-              <img src={item.link} alt='' />
-              <div>
-                <p>{item.name}</p>
-                <p>{item.price}$</p>
+            i < 4 && (
+              <div
+                onClick={() => {
+                  handleClick(item.category, item.id);
+                }}
+                key={item.id}
+                className='card'
+              >
+                <img src={item.link} alt='' />
+                <div>
+                  <p>{item.name}</p>
+                  <p>{item.price}$</p>
+                </div>
               </div>
-            </div>
+            )
           );
         })}
       </div>

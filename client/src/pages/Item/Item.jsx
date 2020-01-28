@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react';
 import styles from './Item.module.scss';
 import { connect } from 'react-redux';
+import { addCart } from '../../actions/itemActions';
 const Item = props => {
   const {
+    id,
     category,
     name,
     price,
@@ -52,7 +54,7 @@ const Item = props => {
             </div>
             <div className={styles.check2}>
               <i className='fas fa-cart-plus'></i>
-              <span>Add to cart</span>
+              <span onClick={() => props.addCart(id)}>Add to cart</span>
             </div>
           </div>
         </div>
@@ -67,4 +69,11 @@ const mapStateToProps = ({ items: { featured } }, ownProps) => {
     })
   };
 };
-export default connect(mapStateToProps)(Item);
+const mapDispatchToProps = dispatch => {
+  return {
+    addCart: id => {
+      dispatch(addCart(id));
+    }
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Item);

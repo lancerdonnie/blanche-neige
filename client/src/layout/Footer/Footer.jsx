@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.module.scss';
-const Footer = () => {
-  return (
+import withLocation from '../../wrappers/withLocation';
+const Footer = ({ data }) => {
+  return data !== '/signin' ? (
     <footer>
       <div className='socials'>
         <Link to=''>
@@ -34,7 +35,7 @@ const Footer = () => {
         <p>&nbsp;</p>
       </div>
     </footer>
-  );
+  ) : null;
 };
 
-export default Footer;
+export default withLocation(Footer);

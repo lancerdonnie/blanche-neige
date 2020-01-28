@@ -1,0 +1,115 @@
+@mixin shadow {
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+}
+.bg {
+  background-color: var(--bg-color);
+  // background-clip: padding-box;
+}
+.catig {
+  margin-top: 5rem;
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    ul {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      li {
+        padding: 0 0.5rem;
+        border-right: 1px solid #000000;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+      li:nth-child(1) {
+        border-left: 1px solid black;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+      }
+      li:nth-child(4) {
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+      }
+    }
+  }
+}
+.category {
+  display: grid;
+  grid-template-columns: repeat(4, 20%);
+  grid-auto-rows: 400px;
+  grid-gap: 20px;
+  justify-content: center;
+  .catitem1 {
+    display: flex;
+    background: linear-gradient(to right, #da4453, #89216b);
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 2;
+    .catitem11 {
+      flex: 1;
+      background: url('/assets/dress.png') no-repeat center/cover;
+      background-origin: content-box;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      div {
+        background: url('/assets/best.png') no-repeat center/cover;
+        height: 80px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    .catitem12 {
+      flex: 1;
+      color: white;
+      font-size: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      span:nth-child(1) {
+        text-align: center;
+        font-family: oswald;
+        font-size: 3rem;
+      }
+      span:nth-child(2) {
+        border-top: white 2px solid;
+        border-bottom: white 2px solid;
+      }
+      span:nth-child(3) {
+        padding: 1rem 2rem;
+        background-color: #280c28;
+        cursor: pointer;
+      }
+    }
+  }
+  .catitem {
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--bg-color3);
+    cursor: pointer;
+
+    .desc {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+      & div {
+        display: flex;
+        justify-content: space-between;
+      }
+      & p {
+        opacity: 0.5;
+        font-size: 90%;
+      }
+    }
+    .catimg {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
