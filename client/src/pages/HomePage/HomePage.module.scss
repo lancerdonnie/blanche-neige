@@ -45,3 +45,10 @@ header {
     // }
   }
 }
+
+.theme {
+  background-color: #212121;
+  & > span {
+    color: white;
+  }
+}

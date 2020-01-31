@@ -3,7 +3,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 var firebaseConfig = {
-  apiKey: 'AIzaSyAYsrK1bGrprK_15JoQAKpfgBmpCUXOdUA',
+  apiKey: process.env.REACT_APP_GOOGLE,
   authDomain: 'blanche-neige-a90a1.firebaseapp.com',
   databaseURL: 'https://blanche-neige-a90a1.firebaseio.com',
   projectId: 'blanche-neige-a90a1',

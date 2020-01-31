@@ -23,7 +23,7 @@ const Item = props => {
 
   const handleClick = ind => {
     props.history.push({
-      pathname: `${category.next[ind].id}`
+      pathname: `${next[ind].id}`
     });
   };
   const handleColor = e => {
@@ -50,8 +50,11 @@ const Item = props => {
         </div>
       </div>
       <div className={styles.product + ' card'}>
-        <img src={link} alt='loading' />
-        <div>
+        <div className={styles.img}>
+          <img src={link} alt='loading' />
+        </div>
+
+        <div className={styles.rest}>
           <p>{category.toUpperCase()}</p>
           <p>{name.toUpperCase()}</p>
           <p>{price}$</p>

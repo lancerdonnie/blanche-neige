@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import styles from './SignIn.module.scss';
 import firebase, { db, auth, gProvider } from '../../config/fbConfig';
+import { toast } from 'react-toastify';
 const SignIn = ({ user, history }) => {
   useEffect(() => {
-    if (user) history.push('/');
+    if (user) {
+      toast.success('Sign in Successful');
+      history.push('/');
+    }
   }, [user]);
   const [order, setOrder] = useState(true);
   const [data, setData] = useState({

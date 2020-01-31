@@ -34,24 +34,26 @@
   }
 }
 .product {
-  // @include card();
   margin-top: 54px;
   height: calc(100vh - 54px);
   width: 100%;
-  // display: grid;
   display: flex;
-  // margin-bottom: 50px;
-  // grid-template-columns: 2fr 1fr;
   padding: 20px;
-  & > div {
+  .rest {
     flex: 1;
   }
-  img {
+  .img {
     flex: 2;
-    padding: 1rem;
-    max-width: 100%;
-    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // text-align: center;
+    img {
+      // margin: auto;
+      padding: 1rem;
+    }
   }
+
   // & > div:nth-child(1) {
   //   // background: url('https://via.placeholder.com/700X550/000');
 

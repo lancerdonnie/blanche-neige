@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import './App.scss';
+import styles from './App.scss';
 import NavBar from './layout/NavBar/NavBar';
 import Footer from './layout/Footer/Footer';
 import HomePage from './pages/HomePage/HomePage';
@@ -15,15 +15,17 @@ import { getItems } from './actions/itemActions';
 import { logStatus } from './actions/logActions';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AppContext from './context/appContext/AppContext';
 
 function App() {
   useEffect(() => {
     store.dispatch(getItems());
     store.dispatch(logStatus());
   }, []);
+  const { theme } = useContext(AppContext);
   return (
     <Provider store={store}>
-      <div>
+      <div className={theme === true ? styles.featured : ''}>
         <NavBar />
         <div className='container'>
           <Switch>

@@ -67,20 +67,20 @@ body {
 }
 
 :root {
+  --bg-color: #5662ca;
+  --bg-color1: white;
+  --bg-color3: #eee;
+  --color: black;
   // --bg-color: #5a3f83;
   //fafafa very light grey
-  --bg-color: #5662ca;
-  --bg-color3: #eee;
-  --bg-color2: pink;
-  --bord: solid pink 3px;
-  --sec-color: rgb(245, 89, 43);
+  // --bg-color2: pink;
+  // --sec-color: rgb(245, 89, 43);
   --height: calc(100vh - 54px);
 }
 
 .container {
   // width: 93%;
   max-width: 100%;
-
   width: 100vw;
   margin: 0;
   padding: 0;
@@ -112,3 +112,4 @@ body {
 // .arrival {
 //   background: url('https://via.placeholder.com/100');
 // }
+

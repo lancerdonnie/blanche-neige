@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
+import AppContext from '../../context/appContext/AppContext';
 import { Link, withRouter } from 'react-router-dom';
 import './NavBar.module.scss';
 import { connect } from 'react-redux';
@@ -7,15 +8,15 @@ import Logo from '../../Assets/logo.png';
 import { toast } from 'react-toastify';
 
 const NavBar = ({ user, history }) => {
-  useEffect(() => {}, []);
+  const { theme, setTheme } = useContext(AppContext);
+  // useEffect(() => {
+  //   console.log(theme)
+  // }, [theme]);
   const handleAuth = async () => {
-    if (user) {
-      await auth.signOut();
-      toast.success('Sign out Successful');
-    }
+    await auth.signOut();
+    toast.success('Sign out Successful');
     history.push('/signin');
   };
-
   return (
     <nav>
       <div>
@@ -43,7 +44,11 @@ const NavBar = ({ user, history }) => {
       <div>
         <span onClick={handleAuth}>SIGN {user ? 'OUT' : 'IN'}</span>
 
-        <i className='fas fa-toggle-off'></i>
+        {/* <i className='fas fa-toggle-off'></i> */}
+        <i
+          onClick={setTheme}
+          className={theme === true ? `fas fa-sun` : `fas fa-moon`}
+        ></i>
         <Link to='/cart'>
           <i className='fas fa-shopping-cart'></i>
         </Link>

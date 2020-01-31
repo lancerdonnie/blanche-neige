@@ -9,8 +9,10 @@ export const logStatus = () => async dispatch => {
         .doc(user.uid)
         .get();
       dispatch({ type: 'SET_AUTH', payload: res.data() });
-      toast.success('Sign in Successful');
+      // localStorage.setItem('auth', true)
+      // toast.success('Sign in Successful');
     } else {
+      // localStorage.setItem('auth', false);
       dispatch({ type: 'REMOVE_AUTH' });
     }
   });
