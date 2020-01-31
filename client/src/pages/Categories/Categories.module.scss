@@ -4,11 +4,11 @@
 }
 .bg {
   background-color: var(--bg-color);
+  color: white;
   // background-clip: padding-box;
 }
 .catig {
-  margin-top: 5rem;
-
+  margin-top: 64px;
   .nav {
     display: flex;
     justify-content: center;
@@ -35,6 +35,7 @@
   }
 }
 .category {
+  margin-top: 54px;
   display: grid;
   grid-template-columns: repeat(4, 20%);
   grid-auto-rows: 400px;
@@ -47,13 +48,13 @@
     grid-column: 1 / span 2;
     .catitem11 {
       flex: 1;
-      background: url('/assets/dress.png') no-repeat center/cover;
+      background: url('../../Assets/dress.png') no-repeat center/cover;
       background-origin: content-box;
       height: 100%;
       width: 100%;
       position: relative;
       div {
-        background: url('/assets/best.png') no-repeat center/cover;
+        background: url('../../Assets/best.png') no-repeat center/cover;
         height: 80px;
         position: absolute;
         bottom: 0;

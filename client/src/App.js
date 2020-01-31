@@ -10,10 +10,16 @@ import Item from './pages/Item/Item';
 import SignIn from './pages/Auth/SignIn';
 import Cart from './pages/Cart/Cart';
 import Cat from './pages/Cat/Cat';
+import About from './pages/About/About';
 import { getItems } from './actions/itemActions';
+import { logStatus } from './actions/logActions';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   useEffect(() => {
     store.dispatch(getItems());
+    store.dispatch(logStatus());
   }, []);
   return (
     <Provider store={store}>
@@ -26,7 +32,9 @@ function App() {
             <Route path='/categories' component={Cat} />
             <Route exact path='/signin' component={SignIn} />
             <Route exact path='/cart' component={Cart} />
+            <Route exact path='/about' component={About} />
           </Switch>
+          <ToastContainer autoClose={2000} />
         </div>
         <Footer />
       </div>

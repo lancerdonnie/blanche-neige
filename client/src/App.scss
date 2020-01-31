@@ -1,5 +1,5 @@
 // CSS RESET
-@import url('https://fonts.googleapis.com/css?family=Oswald|Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald|Nunito|Roboto&display=swap');
 @mixin card {
   background: #fff;
   border-radius: 2px;
@@ -69,7 +69,7 @@ body {
 :root {
   // --bg-color: #5a3f83;
   //fafafa very light grey
-  --bg-color: #715797;
+  --bg-color: #5662ca;
   --bg-color3: #eee;
   --bg-color2: pink;
   --bord: solid pink 3px;

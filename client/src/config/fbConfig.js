@@ -13,6 +13,8 @@ var firebaseConfig = {
   measurementId: 'G-CKTTCCM9XR'
 };
 firebase.initializeApp(firebaseConfig);
+firebase.auth().useDeviceLanguage();
 export const db = firebase.firestore();
 export const auth = firebase.auth();
+export const gProvider = new firebase.auth.GoogleAuthProvider();
 export default firebase;

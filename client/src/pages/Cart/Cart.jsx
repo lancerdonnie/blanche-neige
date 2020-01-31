@@ -1,28 +1,73 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Cart.module.scss';
 import { connect } from 'react-redux';
-import { add } from '../../actions/itemActions';
-import { reduce } from '../../actions/itemActions';
-
+import { add, reduce, remove } from '../../actions/itemActions';
 const Cart = props => {
   const handleImage = (cat, id) => {
-    props.history.push(`/${cat}/${id}`);
+    props.history.push(`/categories/${cat}/${id}`);
+  };
+  const payWithPaystack = () => {
+    var handler = window.PaystackPop.setup({
+      key: 'pk_test_3b231318d6211d2ff6390a092bfd22e5238ee746',
+      email: 'jideadedejifirst@gmail.com',
+      amount: calc.price(),
+      currency: 'NGN',
+      metadata: {
+        custom_fields: [
+          {
+            display_name: '',
+            variable_name: '',
+            value: ''
+          }
+        ]
+      },
+      callback: function(response) {
+        console.log(response);
+        alert('success. transaction ref is ' + response.reference);
+      },
+      onClose: function() {
+        // alert('window closed');
+      }
+    });
+    handler.openIframe();
+  };
+  const noShopping = () => {
+    return (
+      <div>
+        You have not added anything to your cart
+        <div>SHOP</div>
+      </div>
+    );
+  };
+  const calc = {
+    quantity: () => {
+      return props.cart.reduce((a, x) => {
+        return a + x.quantity;
+      }, 0);
+    },
+
+    price: () => {
+      return props.cart.reduce((a, x) => {
+        return a + x.price * x.quantity;
+      }, 0);
+    }
   };
   return (
     <div className={styles.cart}>
       <div className={styles.div1}>
         <div className={styles.title}>
           <p>Shopping Cart</p>
-          <p>{props.cart.length} items</p>
+          <p>{calc.quantity()} items</p>
         </div>
+        <div className={styles.divider}></div>
         <table className={styles.main}>
           <thead>
             <tr className={styles.head}>
-              <th >product details</th>
-              <th>quantity</th>
-              <th>price</th>
-              <th>total</th>
+              <th>PRODUCT DETAILS</th>
+              <th>QUANTITY</th>
+              <th>PRICE</th>
+              <th>TOTAL</th>
               <th></th>
             </tr>
           </thead>
@@ -36,7 +81,9 @@ const Cart = props => {
                       src={item.link}
                       alt='loading'
                     />
-                    <p>{item.name}</p>
+                    <p>{item.name.toUpperCase()}</p>
+                    <p>{item.choice.toUpperCase()}</p>
+                    <p>{item.selectedSize}</p>
                   </td>
                   <td className={styles.val}>
                     <i
@@ -52,14 +99,17 @@ const Cart = props => {
                   <td>${item.price}</td>
                   <td>${item.price * item.quantity}</td>
                   <td>
-                    <i className='fas fa-trash'></i>
+                    <i
+                      onClick={() => props.remove(item.id)}
+                      className='fas fa-trash'
+                    ></i>
                   </td>
                 </tr>
               );
             })}
           </tbody>
         </table>
-        <Link to='/shop'>
+        <Link to='/categories/clothes'>
           <p>
             <i className='fas fa-long-arrow-alt-left'></i>
             Continue Shopping
@@ -68,21 +118,33 @@ const Cart = props => {
       </div>
       <div className={styles.div2}>
         <p>Order Summary</p>
-        <div className='details'>
+        <div className={styles.divider}></div>
+        <div className={styles.details}>
           <div>
-            <span>ITEMS 3</span>
-            <span>$457.98</span>
+            <span>ITEMS {calc.quantity()}</span>
+            <span>${calc.price()}</span>
           </div>
-          <p>SHIPPING</p>
-          <p>STANDARD DELIVERY - $5</p>
-          <p>PROMO CODE</p>
-          <input placeholder='Enter your code' type='text' />
-          <div>apply</div>
+          <p>SHIPPING*</p>
+          <select name='' id=''>
+            <option value=''>STANDARD DELIVERY - $5.00</option>
+            <option value=''>EXPRESS DELIVERY - $50.00</option>
+          </select>
+          <p>EMAIL*</p>
+          <input placeholder='Enter your email' type='text' />
+          {/* <div className={styles.apply}>APPLY</div> */}
+          <div className={styles.divider}></div>
           <div>
             <span>TOTAL COST</span>
-            <span>$457.98</span>
+            <span>${calc.price()}</span>
           </div>
-          <div>CHECKOUT</div>
+          <div
+            onClick={() => {
+              payWithPaystack();
+            }}
+            className={styles.checkout}
+          >
+            MAKE PAYMENT
+          </div>
         </div>
       </div>
     </div>
@@ -100,6 +162,9 @@ const mapDispatchToProps = dispatch => {
     },
     reduce: id => {
       dispatch(reduce(id));
+    },
+    remove: id => {
+      dispatch(remove(id));
     }
   };
 };

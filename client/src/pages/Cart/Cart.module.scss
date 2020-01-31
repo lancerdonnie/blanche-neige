@@ -29,6 +29,8 @@ tbody {
   display: flex;
   margin-top: 54px;
   .div1 {
+    background-color: yellow;
+    padding: 3rem;
     flex: 5;
     display: flex;
     flex-direction: column;
@@ -53,12 +55,67 @@ tbody {
     }
   }
   .div2 {
+    padding: 3rem 2rem;
+    background-color: #eee;
     flex: 2;
     height: var(--height);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     .details {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      select {
+        padding: 1rem;
+      }
+      input {
+        padding: 1rem;
+      }
+      .apply {
+        background-color: var(--bg-color);
+        // text-align: center;
+        padding: 1rem 2rem;
+        color: white;
+        align-self: flex-start;
+      }
+      .checkout {
+        background-color: var(--bg-color);
+        text-align: center;
+        padding: 1rem;
+        color: white;
+        cursor: pointer;
+      }
+      & > :nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+        // margin-bottom: 1rem;
+      }
     }
+  }
+}
+
+.divider {
+  height: 1px;
+  background-color: black;
+}
+
+.pay {
+  z-index: 4;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-color);
+  opacity: 0.9;
+  justify-content: center;
+  align-items: center;
+  div {
+    width: 100%;
+    margin: 0 auto;
   }
 }

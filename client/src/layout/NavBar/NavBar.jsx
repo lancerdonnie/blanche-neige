@@ -1,13 +1,27 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import './NavBar.module.scss';
-import withLocation from '../../wrappers/withLocation';
-const NavBar = ({ data }) => {
-  return data !== '/sign' ? (
+import { connect } from 'react-redux';
+import { auth } from '../../config/fbConfig';
+import Logo from '../../Assets/logo.png';
+import { toast } from 'react-toastify';
+
+const NavBar = ({ user, history }) => {
+  useEffect(() => {}, []);
+  const handleAuth = async () => {
+    if (user) {
+      await auth.signOut();
+      toast.success('Sign out Successful');
+    }
+    history.push('/signin');
+  };
+
+  return (
     <nav>
       <div>
         <Link to='/'>
           <span>BLANCHE</span>
+          {/* <img src={Logo} /> */}
         </Link>
       </div>
       <div>
@@ -19,14 +33,15 @@ const NavBar = ({ data }) => {
           <Link to='/categories/clothes'>
             <li>Shop</li>
           </Link>
-          <li>About</li>
+          <Link to='/about'>
+            <li>About</li>
+          </Link>
+
           <li>Contact</li>
         </ul>
       </div>
       <div>
-        <Link to='/signin'>
-          <span>SIGN IN</span>
-        </Link>
+        <span onClick={handleAuth}>SIGN {user ? 'OUT' : 'IN'}</span>
 
         <i className='fas fa-toggle-off'></i>
         <Link to='/cart'>
@@ -34,7 +49,11 @@ const NavBar = ({ data }) => {
         </Link>
       </div>
     </nav>
-  ) : null;
+  );
 };
-
-export default withLocation(NavBar);
+const mapStateToProps = state => {
+  return {
+    user: state.log.user
+  };
+};
+export default connect(mapStateToProps)(withRouter(NavBar));

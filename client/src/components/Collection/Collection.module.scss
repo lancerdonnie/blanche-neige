@@ -16,7 +16,6 @@
       'item1 item1 item4 item4'
       'item3 item3 item4 item4'
       'item3 item3 item4 item4';
-    // justify-content: center;
     div {
       background: center/cover;
     }
@@ -25,11 +24,6 @@
       background: url('https://cdn.pixabay.com/photo/2017/08/06/22/52/blouse-2597205_640.jpg')
         center/cover;
       // transition: 1s ease-in;
-      &:hover {
-        background: none;
-        text-align: center;
-        align-self: center;
-      }
     }
     div:nth-child(2) {
       grid-area: item2;
@@ -46,13 +40,5 @@
       background: url('https://cdn.pixabay.com/photo/2013/10/14/19/53/hands-195653_640.jpg')
         center/cover;
     }
-    // div:nth-child(5) {
-    //   grid-area: item5;
-
-    // }
-    // div:nth-child(6) {
-    //   grid-area: item;
-
-    // }
   }
 }

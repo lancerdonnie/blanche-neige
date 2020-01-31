@@ -10,10 +10,10 @@ export const getItems = () => async dispatch => {
   dispatch({ type: 'GET_ITEMS', payload: data });
 };
 
-export const addCart = id => {
+export const addCart = (id, choice, size) => {
   return {
     type: 'ADD_CART',
-    payload: id
+    payload: { id, choice, size }
   };
 };
 export const add = id => {
@@ -28,9 +28,9 @@ export const reduce = id => {
     payload: id
   };
 };
-export const cat = category => {
+export const remove = id => {
   return {
-    type: 'CAT',
-    payload: category
+    type: 'REMOVE_ITEM',
+    payload: id
   };
 };
