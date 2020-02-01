@@ -1,8 +1,8 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import styles from './App.scss';
+import './App.scss';
 import NavBar from './layout/NavBar/NavBar';
 import Footer from './layout/Footer/Footer';
 import HomePage from './pages/HomePage/HomePage';
@@ -15,17 +15,20 @@ import { getItems } from './actions/itemActions';
 import { logStatus } from './actions/logActions';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import AppContext from './context/appContext/AppContext';
+import Favourites from './pages/Favourites/Favourites';
 
 function App() {
   useEffect(() => {
     store.dispatch(getItems());
     store.dispatch(logStatus());
   }, []);
-  const { theme } = useContext(AppContext);
+  useEffect(() => {
+    console.log('user', store.getState().log.user);
+  });
+
   return (
     <Provider store={store}>
-      <div className={theme === true ? styles.featured : ''}>
+      <div>
         <NavBar />
         <div className='container'>
           <Switch>
@@ -35,6 +38,7 @@ function App() {
             <Route exact path='/signin' component={SignIn} />
             <Route exact path='/cart' component={Cart} />
             <Route exact path='/about' component={About} />
+            <Route exact path='/favourites' component={Favourites} />
           </Switch>
           <ToastContainer autoClose={2000} />
         </div>

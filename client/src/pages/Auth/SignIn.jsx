@@ -53,8 +53,8 @@ const SignIn = ({ user, history }) => {
   };
   const handleGoogle = async () => {
     var res = await firebase.auth().signInWithPopup(gProvider);
-    console.log(res);
-    if (!res.additionalUserInfo.isNewUser) {
+    if (res.additionalUserInfo.isNewUser) {
+      console.log('save');
       try {
         await db
           .collection('users')

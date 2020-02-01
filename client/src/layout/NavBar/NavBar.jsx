@@ -13,9 +13,13 @@ const NavBar = ({ user, history }) => {
   //   console.log(theme)
   // }, [theme]);
   const handleAuth = async () => {
-    await auth.signOut();
-    toast.success('Sign out Successful');
-    history.push('/signin');
+    if (user) {
+      await auth.signOut();
+      toast.success('Sign out Successful');
+      history.push('/signin');
+    } else {
+      history.push('/signin');
+    }
   };
   return (
     <nav>
@@ -30,25 +34,27 @@ const NavBar = ({ user, history }) => {
           <Link to='/'>
             <li>Home</li>
           </Link>
-
           <Link to='/categories/clothes'>
             <li>Shop</li>
           </Link>
           <Link to='/about'>
             <li>About</li>
           </Link>
-
           <li>Contact</li>
         </ul>
       </div>
       <div>
         <span onClick={handleAuth}>SIGN {user ? 'OUT' : 'IN'}</span>
-
-        {/* <i className='fas fa-toggle-off'></i> */}
         <i
           onClick={setTheme}
           className={theme === true ? `fas fa-sun` : `fas fa-moon`}
         ></i>
+        {user && (
+          <Link to='/favourites'>
+            <i className='fab fa-gratipay'></i>
+          </Link>
+        )}
+
         <Link to='/cart'>
           <i className='fas fa-shopping-cart'></i>
         </Link>

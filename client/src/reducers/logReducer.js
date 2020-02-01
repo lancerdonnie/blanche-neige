@@ -2,7 +2,6 @@ const initialState = { auth: null, user: null };
 const logReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_AUTH':
-      console.log(true, action.payload);
       return {
         ...state,
         auth: true,
@@ -13,6 +12,14 @@ const logReducer = (state = initialState, action) => {
         ...state,
         auth: false,
         user: null
+      };
+    case 'STORE_UPDATE':
+      console.log(action.payload, 'payload');
+      const a = { ...state.user };
+      a.favourites = action.payload;
+      return {
+        ...state,
+        user: a
       };
     default:
       return state;

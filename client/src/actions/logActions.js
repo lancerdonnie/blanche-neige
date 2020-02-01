@@ -8,12 +8,26 @@ export const logStatus = () => async dispatch => {
         .collection('users')
         .doc(user.uid)
         .get();
-      dispatch({ type: 'SET_AUTH', payload: res.data() });
-      // localStorage.setItem('auth', true)
-      // toast.success('Sign in Successful');
+      dispatch({
+        type: 'SET_AUTH',
+        payload: { id: user.uid, ...res.data() }
+      });
     } else {
-      // localStorage.setItem('auth', false);
       dispatch({ type: 'REMOVE_AUTH' });
     }
   });
+};
+
+export const storeUpdate = id => {
+  return async dispatch => {
+    await db
+      .collection('users')
+      .doc(id)
+      .onSnapshot(function(doc) {
+        // var source = doc.metadata.hasPendingWrites ? "Local" : "Server";
+        // console.log(source, " data: ", doc.data());
+        console.log(doc.data());
+        dispatch({ type: 'STORE_UPDATE', payload: doc.data().favourites });
+      });
+  };
 };

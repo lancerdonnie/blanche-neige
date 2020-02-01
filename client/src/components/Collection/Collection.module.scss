@@ -1,6 +1,10 @@
 .collection {
   height: var(--height);
   padding: 60px;
+  background-color: var(--bg-color2);
+  & > p {
+    color: var(--color);
+  }
   .collectionbox {
     cursor: pointer;
     margin: 0 auto;

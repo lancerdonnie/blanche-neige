@@ -1,27 +1,29 @@
 .newarrivals {
-  background-color: #eee;
+  background-color: var(--bg-color3);
   padding: 60px;
   // height: var(--height);
+  & > p {
+    color: var(--color);
+  }
   .arrivalsbox {
     // height: 60vh;
     display: grid;
     grid-template-columns: repeat(3, 200px);
     grid-template-rows: repeat(2, 300px);
-    grid-gap: 10px;
+    grid-gap: 20px;
     justify-content: center;
     .arrival {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       padding: 1rem;
-      background-color: white;
-
+      background-color: var(--card);
+      color: var(--color);
       div:nth-child(1) {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100%;
       }
       div:nth-child(2) {
       }

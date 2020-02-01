@@ -2,28 +2,32 @@
   -webkit-filter: drop-shadow(5px 5px 5px #222);
   filter: drop-shadow(5px 5px 5px #222);
 }
-.bg {
-  background-color: var(--bg-color);
-  color: white;
+#bg {
+  background-color: var(--accent);
+  color: var(--color);
   // background-clip: padding-box;
 }
 .catig {
-  margin-top: 64px;
+  padding-top: 84px;
+  padding-bottom: 64px;
+  background-color: var(--bg-color3);
   .nav {
     display: flex;
     justify-content: center;
+    color: var(--color);
     ul {
       cursor: pointer;
       display: flex;
       justify-content: center;
       li {
+        background-color: var(--bg-color2);
         padding: 0 0.5rem;
-        border-right: 1px solid #000000;
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
+        border-right: 1px solid var(--color);
+        border-top: 1px solid var(--color);
+        border-bottom: 1px solid var(--color);
       }
       li:nth-child(1) {
-        border-left: 1px solid black;
+        border-left: 1px solid var(--color);
         border-top-left-radius: 0.5rem;
         border-bottom-left-radius: 0.5rem;
       }
@@ -35,7 +39,7 @@
   }
 }
 .category {
-  margin-top: 54px;
+  margin-top: 34px;
   display: grid;
   grid-template-columns: repeat(4, 20%);
   grid-auto-rows: 400px;
@@ -43,10 +47,13 @@
   justify-content: center;
   .catitem1 {
     display: flex;
-    background: linear-gradient(to right, #da4453, #89216b);
+    background: var(--linear);
+    // background:linear-gradient(to right, #091c29, #3A6073)
     grid-row: 1 / span 1;
     grid-column: 1 / span 2;
     .catitem11 {
+      border-radius: 10px;
+
       flex: 1;
       background: url('../../Assets/dress.png') no-repeat center/cover;
       background-origin: content-box;
@@ -86,13 +93,23 @@
     }
   }
   .catitem {
+    border-radius: 10px;
+
+    position: relative;
     padding: 3rem 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: var(--bg-color3);
+    background-color: var(--card);
+    color: var(--color);
     cursor: pointer;
-
+    & > i {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      color: white;
+      text-shadow: 0 0 3px #000;
+    }
     .desc {
       display: flex;
       flex-direction: column;
@@ -113,4 +130,9 @@
       align-items: center;
     }
   }
+}
+
+#heart {
+  color: red;
+  text-shadow: none;
 }

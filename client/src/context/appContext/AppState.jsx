@@ -18,15 +18,23 @@ const AppState = props => {
   }, []);
   const lightTheme = {
     '--bg-color': '#5662ca',
-    '--bg-color1': 'white',
+    '--nav-color': 'white',
+    '--bg-color2': 'white',
     '--bg-color3': '#eee',
-    '--color': 'black'
+    '--color': 'black',
+    '--card': '#FFF',
+    '--accent': '#5662ca',
+    '--linear': 'linear-gradient(to right, #da4453, #89216b)'
   };
   const darkTheme = {
-    '--bg-color': '#5662ca',
-    '--bg-color1': 'black',
-    '--bg-color3': '#eee',
-    '--color': 'white'
+    '--bg-color': 'white',
+    '--nav-color': 'black',
+    '--bg-color2': '#212121',
+    '--bg-color3': '#333333ad',
+    '--color': 'white',
+    '--card': '#011b33',
+    '--accent': '#b05603',
+    '--linear': 'linear-gradient(to right, #091c29, #3A6073)'
   };
 
   const applyTheme = nextTheme => {

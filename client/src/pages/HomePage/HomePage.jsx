@@ -1,7 +1,6 @@
-import React, { Fragment, useContext } from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import styles from './HomePage.module.scss';
-import AppContext from '../../context/appContext/AppContext';
+import './HomePage.module.scss';
 import fashion from '../../Assets/fashion.svg';
 import undraw from '../../Assets/undraw.svg';
 import NewArrivals from '../../components/NewArrivals/NewArrivals';
@@ -11,8 +10,6 @@ import Spinner from '../../layout/Spinner/Spinner';
 
 const HomePage = props => {
   const { history, featured, random, auth } = props;
-  const { theme } = useContext(AppContext);
-  const themed = theme === true ? styles.theme : '';
   const handleClick = (category, id) => {
     history.push(`/categories/${category}/${id}`);
   };
@@ -20,7 +17,7 @@ const HomePage = props => {
     <Spinner big />
   ) : (
     <Fragment>
-      <header className={themed}>
+      <header>
         <p></p>
         <span>DRIP</span>
         <span>ELEGANCE</span>

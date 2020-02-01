@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Categories.module.scss';
-import { connect } from 'react-redux';
 import Spinner from '../../layout/Spinner/Spinner';
+import { db } from '../../config/fbConfig';
+import { toast } from 'react-toastify';
+import withFav from '../../wrappers/withFav';
 
 const Categories = props => {
   const style = props.match.params.cat;
@@ -9,30 +11,69 @@ const Categories = props => {
     props.history.push(`/categories/${cat}`);
   };
 
+  const checkFav = id => {
+    if (props.auth) {
+      return props.user.favourites.some(x => {
+        return x === id;
+      });
+    }
+    // return true;
+  };
+
+  const handleFav = async (e, id) => {
+    e.stopPropagation();
+    if (props.auth) {
+      const w = props.user.favourites.some(x => {
+        return x === id;
+      });
+      if (w) {
+        const w = props.user.favourites.filter(x => {
+          return x !== id;
+        });
+        await db
+          .collection('users')
+          .doc(props.user.id)
+          .update({
+            favourites: w
+          });
+        toast.success('Removed Successfully');
+      } else {
+        await db
+          .collection('users')
+          .doc(props.user.id)
+          .update({
+            favourites: [...props.user.favourites, id]
+          });
+        toast.success('Added Successfully');
+      }
+    } else {
+      toast.warn('You must be logged in to do this');
+    }
+  };
   return (
     <div className={styles.catig}>
       <div className={styles.nav}>
         <ul>
           <li
-            className={style === 'clothes' ? styles.bg : null}
+            id={style === 'clothes' ? styles.bg : null}
             onClick={() => handle('clothes')}
           >
             Clothes
           </li>
           <li
-            className={style === 'bags' ? styles.bg : null}
+            id={style === 'bags' ? styles.bg : null}
             onClick={() => handle('bags')}
           >
             Bags
           </li>
           <li
-            className={style === 'shoes' ? styles.bg : null}
+            id={style === 'shoes' ? styles.bg : null}
             onClick={() => handle('shoes')}
           >
             Shoes
           </li>
           <li
-            className={style === 'jewellery' ? styles.bg : null}
+            id={style === 'jewellery' ? styles.bg : null}
             onClick={() => handle('jewellery')}
           >
             Jewellery
@@ -73,6 +114,11 @@ const Categories = props => {
                   </div>
                   <p>{item.category}</p>
                 </div>
+                <i
+                  onClick={e => handleFav(e, item.id)}
+                  className={`fas fa-heart `}
+                  id={checkFav(item.id) ? styles.heart : ''}
+                ></i>
               </div>
             );
           })}
@@ -83,11 +129,4 @@ const Categories = props => {
     </div>
   );
 };
-const mapStateToProps = ({ items: { featured } }, ownProps) => {
-  return {
-    featured: featured.filter(x => {
-      return x.category === ownProps.match.params.cat;
-    })
-  };
-};
-export default connect(mapStateToProps)(Categories);
+export default withFav(Categories);

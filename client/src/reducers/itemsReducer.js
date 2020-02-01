@@ -53,6 +53,7 @@ const itemsReducer = (state = initialState, action) => {
           return x.id !== action.payload;
         })
       };
+
     default:
       return state;
   }
