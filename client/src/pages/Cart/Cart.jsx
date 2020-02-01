@@ -81,9 +81,11 @@ const Cart = props => {
                       src={item.link}
                       alt='loading'
                     />
-                    <p>{item.name.toUpperCase()}</p>
-                    <p>{item.choice.toUpperCase()}</p>
-                    <p>{item.selectedSize}</p>
+                    <div>
+                      <p>{item.name.toUpperCase()}</p>
+                      <p>COLOUR {item.choice.toUpperCase()}</p>
+                      <p>SIZE {item.selectedSize}</p>
+                    </div>
                   </td>
                   <td className={styles.val}>
                     <i
@@ -133,7 +135,7 @@ const Cart = props => {
           <input placeholder='Enter your email' type='text' />
           {/* <div className={styles.apply}>APPLY</div> */}
           <div className={styles.divider}></div>
-          <div>
+          <div  className={styles.cost}>
             <span>TOTAL COST</span>
             <span>${calc.price()}</span>
           </div>

@@ -26,7 +26,10 @@ const AppState = props => {
     '--accent': '#5662ca',
     '--linear': 'linear-gradient(to right, #da4453, #89216b)',
     '--sign': '#5662ca',
-    '--sign2': 'white'
+    '--sign2': 'white',
+    '--checkout': '#eee',
+    '--checkout2': '#5662ca',
+    '--select': 'white'
   };
   const darkTheme = {
     '--bg-color': 'white',
@@ -38,7 +41,10 @@ const AppState = props => {
     '--accent': '#b05603',
     '--linear': 'linear-gradient(to right, #091c29, #3A6073)',
     '--sign': '#011b33',
-    '--sign2': '#333333ad'
+    '--sign2': '#333333ad',
+    '--checkout': '#011b33',
+    '--checkout2': 'aquamarine',
+    '--select': '#b05603'
   };
 
   const applyTheme = nextTheme => {
