@@ -18,21 +18,6 @@ const Favourites = props => {
   const handleFav = async (e, id) => {
     e.stopPropagation();
     if (props.auth) {
-      // const w = props.user.favourites.some(x => {
-      //   return x === id;
-      // });
-      // if (w) {
-      //   const w = props.user.favourites.filter(x => {
-      //     return x !== id;
-      //   });
-      //   await db
-      //     .collection('users')
-      //     .doc(props.user.id)
-      //     .update({
-      //       favourites: w
-      //     });
-      //   toast.success('Removed Successfully');
-      // } else {
       await db
         .collection('users')
         .doc(props.user.id)

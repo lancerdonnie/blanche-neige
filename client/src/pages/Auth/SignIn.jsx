@@ -71,14 +71,15 @@ const SignIn = ({ user, history }) => {
     } else {
     }
   };
-  return (
+  return ( 
     <div className={styles.signin}>
       <div className={order ? styles.div1 : styles.div2}>
-        <p>Sign {order ? 'in' : 'up'}</p>
+        <p> Sign {order ? 'in' : 'up'}</p>
         <span onClick={handleGoogle}>
+        <i className="fab fa-google"></i>
           Sign {order ? 'in' : 'up'} with google
         </span>
-        {order && <p>or use your account</p>}
+        {order && <p className={styles.use}>or use your account</p>}
         <form onSubmit={handleSubmit} type='submit'>
           {!order && (
             <input
@@ -113,7 +114,7 @@ const SignIn = ({ user, history }) => {
         </form>
       </div>
       <div className={order ? styles.div2 : styles.div1}>
-        <p>{order ? 'Hello Friend!' : ' Welcome Back!'}</p>
+        <p>{order ? 'Hello, Friend!' : ' Welcome Back!'}</p>
         <div>
           <p>
             {order

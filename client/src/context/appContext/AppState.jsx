@@ -24,7 +24,9 @@ const AppState = props => {
     '--color': 'black',
     '--card': '#FFF',
     '--accent': '#5662ca',
-    '--linear': 'linear-gradient(to right, #da4453, #89216b)'
+    '--linear': 'linear-gradient(to right, #da4453, #89216b)',
+    '--sign': '#5662ca',
+    '--sign2': 'white'
   };
   const darkTheme = {
     '--bg-color': 'white',
@@ -34,7 +36,9 @@ const AppState = props => {
     '--color': 'white',
     '--card': '#011b33',
     '--accent': '#b05603',
-    '--linear': 'linear-gradient(to right, #091c29, #3A6073)'
+    '--linear': 'linear-gradient(to right, #091c29, #3A6073)',
+    '--sign': '#011b33',
+    '--sign2': '#333333ad'
   };
 
   const applyTheme = nextTheme => {

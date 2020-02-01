@@ -5,38 +5,45 @@
   order: 2;
 }
 .signin {
+  background-color: var(--sign2);
   height: var(--height);
   width: 100vw;
   display: flex;
   justify-content: center;
   text-align: center;
-  font-size: 1.3rem;
-  color: white;
-
+  color: var(--color);
+  margin-top: 54px;
+  font-family: 'Roboto';
   & > div {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
   & > div:first-child {
     p {
-      color: black;
+      letter-spacing: 2px;
+      padding-bottom: 1rem;
     }
     & > p:nth-child(1) {
-      font-family: Oswald;
+      font-family: Nunito;
       font-weight: bolder;
       font-size: 3rem;
       color: black;
     }
     span {
+      color: white;
       padding: 0.7rem 2rem;
       border-radius: 1.5rem;
-      background-color: var(--bg-color);
       align-self: center;
       cursor: pointer;
+      background-color: #428bf5;
+      margin-bottom: 1rem;
+      i {
+        margin-right: 7px;
+      }
     }
     div {
       padding: 0.7rem 2rem;
@@ -46,26 +53,63 @@
       font-size: 1rem;
       cursor: pointer;
     }
+    .use {
+      margin-top: -1rem;
+    }
     form {
       display: flex;
       flex-direction: column;
       align-self: center;
-
+      align-items: center;
+      justify-content: space-around;
+      margin-bottom: 1rem;
+      p {
+        margin-bottom: 1rem;
+      }
       input {
-        padding: 0.5rem;
+        padding: 1rem;
         border: none;
         background-color: #eee;
+        margin-bottom: 1rem;
+        width: 300px;
+        border-radius: 5px;
+      }
+      & > :last-child {
+        padding: 1em 2rem;
+        border-radius: 1.5rem;
+        background-color: var(--sign);
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+        width: 220px;
       }
     }
   }
   & > div:last-child {
-    background-color: var(--bg-color);
+    background-color: var(--sign);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+
+    & > :nth-child(1) {
+      letter-spacing: 2px;
+      font-size: 3rem;
+      font-family: Nunito;
+      margin-bottom: 20px;
+    }
+    & > :nth-child(2) {
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
     & > :nth-child(3) {
       align-self: center;
       padding: 0.7rem 2rem;
       border: white solid 1px;
       border-radius: 1.5rem;
       cursor: pointer;
+      font-weight: bold;
     }
   }
 }

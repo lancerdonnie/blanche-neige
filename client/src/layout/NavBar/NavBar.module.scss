@@ -40,9 +40,12 @@ nav {
     justify-content: flex-end;
     align-items: center;
     span,
-    i {
+    a {
       margin-left: 30px;
       cursor: pointer;
+    }
+    & > i {
+      margin-left: 30px;
     }
   }
 }
