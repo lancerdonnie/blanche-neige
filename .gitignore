@@ -29,5 +29,4 @@ yarn-error.log*
 /client/.env
 /scss
 /dist
-guide.txt
 /assets

@@ -1,0 +1,155 @@
+nav z-index 3
+add category nav
+font awesome side nav
+angolia seach
+fix item page code
+logo
+oauth
+cart for each user localstorage
+signout
+rename stripe folder
+change all rems
+fix go crazy ziv
+firebase rules
+fix signin popup
+move signin and logout to redux
+fix padding of nav cart 
+move context baxk to app
+spinner dark dolor
+favourites
+validation in signin and cart
+change color of alert
+add html for empty pages 
+make spinner span whole page
+add logocall to action
+bolder head1
+forgot password
+change to naira
+fix add to cart
+handle errors
+upload pictures and vectors
+adjust footer
+
+difficulties:tried to share firestore userdata but couldnt run action in the root component so i made a HOC
+
+siteinspire.com scrolltobottom,click little arrow
+awwwards.com go to nominees,click the little arrow
+dribble, search home page not homepage
+pinterest
+designspiration.net
+lapa.ninja
+collectui.com
+mobbin design
+
+
+000
+212121
+303030
+424242
+
+121212
+
+color book
+dep  redux react-redux redux-thunk react-router-dom axios
+dev dep node-sass redux-devtools-extension
+
+pk_test_LksuSixZm38cfg6DRzDLm8uH009kj8rGqW
+
+sk_test_qCqcNxPMXGpPNE65Qm2r4I6p00894v6S7c
+
+best buy sign in page
+
+cloth
+https://pixabay.com/get/50e0d34a4351b10ff3d89938b977692b083edbed53517340702e7f/shopping-606993_640.jpg
+https://pixabay.com/get/54e5dc444852a914f1dc8460825668204022dfe05b51714b7c2a7cd2/blouse-2597205_640.jpg
+
+shoes
+https://pixabay.com/get/54e0d24a4354a814f1dc8460825668204022dfe05b51714b7c287ed5/argentine-tango-2079964_640.jpg
+https://pixabay.com/get/54e8d6424250ad14f1dc8460825668204022dfe05b51714b7c287ed1/shoes-2831821_640.jpg
+
+bags
+https://pixabay.com/get/55e7d744435bab14f1dc8460825668204022dfe05b51714a752e7ed6/leather-craft-3727997_640.jpg
+https://pixabay.com/get/54e8d240425ba514f1dc8460825668204022dfe05b51714a752e7ed2/bag-2873899_640.jpg
+https://pixabay.com/get/57e0d6424f56ab14f1dc8460825668204022dfe05b51714a752e7dd4/purse-1031547_640.jpg
+https://pixabay.com/get/54e5dc42425aab14f1dc8460825668204022dfe05b51714a752e7dd2/people-2591887_640.jpg
+
+jewellery
+https://pixabay.com/get/57e9d0454f56b10ff3d89938b977692b083edbed535172497c2b7a/hands-195654_640.jpg
+https://pixabay.com/get/54e5d2474f5ab10ff3d89938b977692b083edbed535172497c2c7c/heart-257458_640.jpg
+
+
+
+14 dresses jewellries shoea bags
+
+http://pngimg.com/uploads/dress_shirt/dress_shirt_PNG8113.png
+http://pngimg.com/uploads/dress_shirt/dress_shirt_PNG8070.png
+http://pngimg.com/uploads/dress_shirt/dress_shirt_PNG8069.png
+http://pngimg.com/uploads/cowboy_hat/cowboy_hat_PNG81.png
+http://pngimg.com/uploads/fur_coat/fur_coat_PNG23.png
+http://pngimg.com/uploads/jeans/jeans_PNG5770.png
+http://pngimg.com/uploads/leggings/leggings_PNG56.png
+
+shoes
+http://pngimg.com/uploads/converse/converse_PNG63.png
+http://pngimg.com/uploads/converse/converse_PNG59.png
+http://pngimg.com/uploads/vans/vans_PNG50.png
+http://pngimg.com/uploads/vans/vans_PNG47.png
+http://pngimg.com/uploads/vans/vans_PNG48.png
+http://pngimg.com/uploads/vans/vans_PNG46.png
+http://pngimg.com/uploads/men_shoes/men_shoes_PNG7497.png
+http://pngimg.com/uploads/men_shoes/men_shoes_PNG7479.png
+http://pngimg.com/uploads/men_shoes/men_shoes_PNG7496.png
+http://pngimg.com/uploads/louboutin/louboutin_PNG10851.png
+http://pngimg.com/uploads/louboutin/louboutin_PNG10837.png
+http://pngimg.com/uploads/louboutin/louboutin_PNG10834.png
+http://pngimg.com/uploads/women_shoes/women_shoes_PNG7474.png
+http://pngimg.com/uploads/women_shoes/women_shoes_PNG7461.png
+
+bags
+http://www.pngall.com/wp-content/uploads/2016/04/Women-Bag-High-Quality-PNG.png
+http://www.pngall.com/wp-content/uploads/2016/04/Women-Bag-PNG-Images.png
+http://www.pngall.com/wp-content/uploads/2016/04/Women-Bag-PNG-Pic.png
+http://www.pngall.com/wp-content/uploads/2016/04/Women-Bag-PNG-Image.png
+http://www.pngall.com/wp-content/uploads/2016/04/Women-Bag-PNG-File.png
+http://pngimg.com/uploads/women_bag/women_bag_PNG6416.png
+http://pngimg.com/uploads/women_bag/women_bag_PNG6409.png
+http://pngimg.com/uploads/women_bag/women_bag_PNG6393.png
+http://pngimg.com/uploads/women_bag/women_bag_PNG6394.png
+http://pngimg.com/uploads/women_bag/women_bag_PNG6408.png
+http://pngimg.com/uploads/backpack/backpack_PNG6360.png
+http://pngimg.com/uploads/backpack/backpack_PNG6325.png
+http://pngimg.com/uploads/luggage/luggage_PNG10746.png
+http://pngimg.com/uploads/women_bag/women_bag_PNG6421.png
+
+jewelrry
+http://pngimg.com/uploads/watches/watches_PNG9906.png
+http://pngimg.com/uploads/watches/watches_PNG9905.png
+http://pngimg.com/uploads/watches/watches_PNG9899.png
+http://pngimg.com/uploads/watches/watches_PNG9883.png
+http://pngimg.com/uploads/watches/watches_PNG9881.png
+http://pngimg.com/uploads/jewelry/jewelry_PNG6840.png
+http://pngimg.com/uploads/jewelry/jewelry_PNG6780.png
+http://pngimg.com/uploads/necklace/necklace_PNG138.png
+http://pngimg.com/uploads/necklace/necklace_PNG134.png
+http://pngimg.com/uploads/necklace/necklace_PNG130.png
+http://pngimg.com/uploads/necklace/necklace_PNG128.png
+http://pngimg.com/uploads/necklace/necklace_PNG126.png
+http://pngimg.com/uploads/necklace/necklace_PNG127.png
+http://pngimg.com/uploads/necklace/necklace_PNG94.png
+
+
+//collection size
+ db.collection('items')
+      .get()
+      .then(snap => {
+        const size = snap.size; // will return the collection size
+        console.log(size);
+      });
+
+      wix
+      go to business.google.com
+sign in with
+kingsgrub@gmail.com
+kingsgrub2020
+#B83837
+#BCD546

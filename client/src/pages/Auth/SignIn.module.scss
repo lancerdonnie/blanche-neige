@@ -31,7 +31,7 @@
       font-family: Nunito;
       font-weight: bolder;
       font-size: 3rem;
-      color: black;
+      color: var(--color);
     }
     span {
       color: white;
@@ -87,6 +87,7 @@
   }
   & > div:last-child {
     background-color: var(--sign);
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -97,10 +98,10 @@
       letter-spacing: 2px;
       font-size: 3rem;
       font-family: Nunito;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
     & > :nth-child(2) {
-      margin-bottom: 30px;
+      margin-bottom: 50px;
       letter-spacing: 1px;
     }
     & > :nth-child(3) {

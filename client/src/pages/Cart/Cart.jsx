@@ -4,6 +4,7 @@ import styles from './Cart.module.scss';
 import { connect } from 'react-redux';
 import { add, reduce, remove } from '../../actions/itemActions';
 const Cart = props => {
+  const [select,setSelect]=useState(1000)
   const handleImage = (cat, id) => {
     props.history.push(`/categories/${cat}/${id}`);
   };
@@ -53,6 +54,9 @@ const Cart = props => {
       }, 0);
     }
   };
+  const selectChange=(e)=>{
+    setSelect(Number(e.target.value))
+  }
   return (
     <div className={styles.cart}>
       <div className={styles.div1}>
@@ -127,9 +131,9 @@ const Cart = props => {
             <span>${calc.price()}</span>
           </div>
           <p>SHIPPING*</p>
-          <select name='' id=''>
-            <option value=''>STANDARD DELIVERY - $5.00</option>
-            <option value=''>EXPRESS DELIVERY - $50.00</option>
+          <select onChange={selectChange}>
+            <option value={1000}>STANDARD DELIVERY - $1000</option>
+            <option value={2000}>EXPRESS DELIVERY - $2000</option>
           </select>
           <p>EMAIL*</p>
           <input placeholder='Enter your email' type='text' />
@@ -137,7 +141,7 @@ const Cart = props => {
           <div className={styles.divider}></div>
           <div  className={styles.cost}>
             <span>TOTAL COST</span>
-            <span>${calc.price()}</span>
+            <span>${calc.price()+select}</span>
           </div>
           <div
             onClick={() => {
