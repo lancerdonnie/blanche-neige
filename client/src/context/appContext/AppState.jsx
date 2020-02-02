@@ -29,7 +29,8 @@ const AppState = props => {
     '--sign2': 'white',
     '--checkout': '#eee',
     '--checkout2': '#5662ca',
-    '--select': 'white'
+    '--select': 'white',
+    '--input': 'white'
   };
   const darkTheme = {
     '--bg-color': 'white',
@@ -44,7 +45,8 @@ const AppState = props => {
     '--sign2': '#333333ad',
     '--checkout': '#011b33',
     '--checkout2': 'aquamarine',
-    '--select': '#b05603'
+    '--select': '#b05603',
+    '--input': '#ddd'
   };
 
   const applyTheme = nextTheme => {

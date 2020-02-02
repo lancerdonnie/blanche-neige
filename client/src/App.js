@@ -16,6 +16,7 @@ import { logStatus } from './actions/logActions';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Favourites from './pages/Favourites/Favourites';
+import Contact from './pages/Contact/Contact';
 
 function App() {
   useEffect(() => {
@@ -39,6 +40,7 @@ function App() {
             <Route exact path='/cart' component={Cart} />
             <Route exact path='/about' component={About} />
             <Route exact path='/favourites' component={Favourites} />
+            <Route exact path='/contact' component={Contact} />
           </Switch>
           <ToastContainer autoClose={2000} />
         </div>
