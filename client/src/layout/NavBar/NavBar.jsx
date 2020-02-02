@@ -1,17 +1,17 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import AppContext from '../../context/appContext/AppContext';
 import { Link, withRouter } from 'react-router-dom';
-import './NavBar.module.scss';
+import styles from './NavBar.module.scss';
 import { connect } from 'react-redux';
 import { auth } from '../../config/fbConfig';
 import Logo from '../../Assets/logo.png';
+import Logo2 from '../../Assets/logo2.png';
 import { toast } from 'react-toastify';
 
 const NavBar = ({ user, history }) => {
   const { theme, setTheme } = useContext(AppContext);
-  // useEffect(() => {
-  //   console.log(theme)
-  // }, [theme]);
+  const [close, setClose] = useState(false);
+
   const handleAuth = async () => {
     if (user) {
       await auth.signOut();
@@ -21,15 +21,27 @@ const NavBar = ({ user, history }) => {
       history.push('/signin');
     }
   };
+  const handleClose = () => {
+    setClose(!close);
+  };
   return (
     <nav>
-      <div>
+      <div
+        onClick={() => {
+          setClose(true);
+        }}
+        className={styles.harmburger}
+      >
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div className={styles.logo}>
         <Link to='/'>
-          <span>BLANCHE</span>
-          {/* <img src={Logo} /> */}
+          <img src={theme === false ? Logo : Logo2} />
         </Link>
       </div>
-      <div>
+      <div className={styles.links}>
         <ul>
           <Link to='/'>
             <li>Home</li>
@@ -45,7 +57,22 @@ const NavBar = ({ user, history }) => {
           </Link>
         </ul>
       </div>
-      <div>
+      <div className={styles.icons2}>
+        <i
+          onClick={handleAuth}
+          className={`fas ${user ? 'fa-sign-out-alt' : 'fa-sign-in-alt'}`}
+        ></i>
+        <i
+          onClick={setTheme}
+          className={theme === true ? `fas fa-sun` : `fas fa-moon`}
+        ></i>
+        {user && (
+          <Link to='/favourites'>
+            <i className='fab fa-gratipay'></i>
+          </Link>
+        )}
+      </div>
+      <div className={styles.icons}>
         <span onClick={handleAuth}>SIGN {user ? 'OUT' : 'IN'}</span>
         <i
           onClick={setTheme}
@@ -59,6 +86,22 @@ const NavBar = ({ user, history }) => {
 
         <Link to='/cart'>
           <i className='fas fa-shopping-cart'></i>
+        </Link>
+      </div>
+
+      <div id={!close ? styles.display : ''} className={styles.menu}>
+        <p onClick={handleClose}>X</p>
+        <Link onClick={handleClose} to='/'>
+          <span>Home</span>
+        </Link>
+        <Link onClick={handleClose} to='/categories/clothes'>
+          <span>Shop</span>
+        </Link>
+        <Link onClick={handleClose} to='/about'>
+          <span>about</span>
+        </Link>
+        <Link onClick={handleClose} to='/contact'>
+          <span>Contact</span>
         </Link>
       </div>
     </nav>
