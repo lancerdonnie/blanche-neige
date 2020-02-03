@@ -7,7 +7,9 @@ import {
 
 const initialState = {
   current: null,
-  cart: [...JSON.parse(localStorage.getItem('cart'))],
+  cart: localStorage.getItem('cart')
+    ? [...JSON.parse(localStorage.getItem('cart'))]
+    : [],
   featured: [],
   random: []
 };
