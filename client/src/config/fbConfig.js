@@ -2,8 +2,14 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
+let key;
+if (process.env.NODE_ENV !== 'production') {
+  key = process.env.REACT_APP_GOOGLE;
+} else {
+  key = process.env.GOOGLE;
+}
 var firebaseConfig = {
-  apiKey: process.env.REACT_APP_GOOGLE,
+  apiKey: key,
   authDomain: 'blanche-neige-a90a1.firebaseapp.com',
   databaseURL: 'https://blanche-neige-a90a1.firebaseio.com',
   projectId: 'blanche-neige-a90a1',

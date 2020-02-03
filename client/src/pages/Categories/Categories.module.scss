@@ -54,13 +54,15 @@
       border-radius: 10px;
 
       flex: 1;
-      background: url('../../Assets/dress.png') no-repeat center/cover;
+      // background: url('../../Assets/dress.png') no-repeat center/cover;
+      background: url('https://res.cloudinary.com/dtyrfo0fx/image/upload/v1580722968/dress.png')
+        no-repeat center/cover;
       background-origin: content-box;
       height: 100%;
       width: 100%;
       position: relative;
       div {
-        background: url('../../Assets/best.png') no-repeat center/cover;
+        // background: url('../../Assets/best.png') no-repeat center/cover;
         height: 80px;
         position: absolute;
         bottom: 0;

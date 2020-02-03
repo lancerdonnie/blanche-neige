@@ -13,7 +13,6 @@ call to action
 forgot password
 fix add to cart-
 handle errors
-upload pictures and vectors-
 animation
 
 difficulties:tried to share firestore userdata but couldnt run action in the root component so i made a HOC

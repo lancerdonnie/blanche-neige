@@ -4,8 +4,8 @@ import { Link, withRouter } from 'react-router-dom';
 import styles from './NavBar.module.scss';
 import { connect } from 'react-redux';
 import { auth } from '../../config/fbConfig';
-import Logo from '../../Assets/logo.png';
-import Logo2 from '../../Assets/logo2.png';
+// import Logo from '../../Assets/logo.png';
+// import Logo2 from '../../Assets/logo2.png';
 import { toast } from 'react-toastify';
 
 const NavBar = ({ user, history }) => {
@@ -38,7 +38,13 @@ const NavBar = ({ user, history }) => {
       </div>
       <div className={styles.logo}>
         <Link to='/'>
-          <img src={theme === false ? Logo : Logo2} />
+          <img
+            src={
+              theme === false
+                ? 'https://res.cloudinary.com/dtyrfo0fx/image/upload/v1580722960/logo.png'
+                : 'https://res.cloudinary.com/dtyrfo0fx/image/upload/v1580722961/logo2.png'
+            }
+          />
         </Link>
       </div>
       <div className={styles.links}>

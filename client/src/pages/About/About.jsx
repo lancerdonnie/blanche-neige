@@ -1,11 +1,9 @@
 import React from 'react';
-import vector from '../../Assets/Vector.svg';
 import styles from './About.module.scss';
 
 const About = () => {
   return (
     <div className={styles.about}>
-      {/* <img src={vector} /> */}
       <div>
         <h2>About Us</h2>
         <p>

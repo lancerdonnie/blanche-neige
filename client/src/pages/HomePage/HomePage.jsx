@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styles from './HomePage.module.scss';
-import fashion from '../../Assets/fashion.svg';
-import undraw from '../../Assets/undraw.svg';
+// import undraw from '../../Assets/undraw.svg';
 import NewArrivals from '../../components/NewArrivals/NewArrivals';
 import Collection from '../../components/Collection/Collection';
 import Featured from '../../components/Featured/Featured';
@@ -21,8 +20,12 @@ const HomePage = props => {
         <p></p>
         <span>DRIP</span>
         <span>ELEGANCE</span>
-        <img src={undraw} alt='' />
-        {/* <div><img src={fashion} alt='' /></div> */}
+        <img
+          src={
+            'https://res.cloudinary.com/dtyrfo0fx/image/upload/v1580722964/undraw.svg'
+          }
+          alt=''
+        />
       </header>
       <Featured handleClick={handleClick} featured={featured} />
       <Collection history={props.history} />
