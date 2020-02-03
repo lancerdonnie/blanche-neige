@@ -4,12 +4,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 
-let basename = '/client';
-if (process.env.NODE_ENV !== 'production') {
-  basename = null;
-}
 ReactDOM.render(
-  <BrowserRouter basename={basename}>
+  <BrowserRouter basename='/client'>
     <App />
   </BrowserRouter>,
   document.getElementById('root')
