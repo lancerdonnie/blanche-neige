@@ -6,7 +6,7 @@ let key;
 if (process.env.NODE_ENV !== 'production') {
   key = process.env.REACT_APP_GOOGLE;
 } else {
-  key = process.env.GOOGLE;
+  key = process.env.REACT_APP_GOOGLE;
   console.log(
     'env',
     process.env.GOOGLE,
