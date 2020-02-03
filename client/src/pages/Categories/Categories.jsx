@@ -110,7 +110,7 @@ const Categories = props => {
                 <div className={styles.desc}>
                   <div>
                     <span>{item.name}</span>
-                    <span>${item.price}</span>
+                    <span>₦{item.price}</span>
                   </div>
                   <p>{item.category}</p>
                 </div>

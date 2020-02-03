@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Favourites.module.scss';
 import { connect } from 'react-redux';
 import Spinner from '../../layout/Spinner/Spinner';
@@ -13,55 +14,69 @@ const Favourites = props => {
     }
   }, []);
   const noFav = () => {
-    return <div>please add favourites</div>;
+    return (
+      <div className={styles.nofav}>
+        <p>You haven't added favourites</p>
+        <Link to='/categories/clothes'>
+          <div>SHOP</div>
+        </Link>
+      </div>
+    );
   };
   const handleFav = async (e, id) => {
     e.stopPropagation();
     if (props.auth) {
+      const w = props.user.favourites.filter(x => {
+        return x !== id;
+      });
       await db
         .collection('users')
         .doc(props.user.id)
         .update({
-          favourites: [...props.user.favourites, id]
+          favourites: w
         });
-      // }
+      toast.success('Removed Successfully');
     } else {
       toast.warn('You must be logged in to do this');
     }
   };
   return props.favourites !== null ? (
-    <div className={styles.favourites}>
-      <p className='head1'>FAVOURITES</p>
-      <div className={styles.fav}>
-        {props.favourites.map(item => {
-          return (
-            <div
-              onClick={() => {
-                props.history.push(`/categories/${item.category}/${item.id}`);
-              }}
-              className={styles.favitem}
-              key={item.id}
-            >
-              <div className='dummydiv'></div>
-              <div className={styles.favimg}>
-                <img src={item.link} alt='loading' />
-              </div>
-              <div className={styles.desc}>
-                <div>
-                  <span>{item.name}</span>
-                  <span>${item.price}</span>
+    props.favourites.length > 0 ? (
+      <div className={styles.favourites}>
+        <p className='head1'>FAVOURITES</p>
+        <div className={styles.fav}>
+          {props.favourites.map(item => {
+            return (
+              <div
+                onClick={() => {
+                  props.history.push(`/categories/${item.category}/${item.id}`);
+                }}
+                className={styles.favitem}
+                key={item.id}
+              >
+                <div className='dummydiv'></div>
+                <div className={styles.favimg}>
+                  <img src={item.link} alt='loading' />
                 </div>
-                <p>{item.category}</p>
+                <div className={styles.desc}>
+                  <div>
+                    <span>{item.name}</span>
+                    <span>₦{item.price}</span>
+                  </div>
+                  <p>{item.category}</p>
+                </div>
+                <i
+                  onClick={e => handleFav(e, item.id)}
+                  className={`fas fa-heart `}
+                ></i>
               </div>
-              <i
-                onClick={e => handleFav(e, item.id)}
-                className={`fas fa-heart `}
-              ></i>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </div>
+    ) : (
+      noFav()
+    )
   ) : (
     <Spinner big />
   );

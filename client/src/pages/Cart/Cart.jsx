@@ -4,7 +4,7 @@ import styles from './Cart.module.scss';
 import { connect } from 'react-redux';
 import { add, reduce, remove } from '../../actions/itemActions';
 const Cart = props => {
-  const [select,setSelect]=useState(1000)
+  const [select, setSelect] = useState(1000);
   const handleImage = (cat, id) => {
     props.history.push(`/categories/${cat}/${id}`);
   };
@@ -35,9 +35,9 @@ const Cart = props => {
   };
   const noShopping = () => {
     return (
-      <div>
-        You have not added anything to your cart
-        <div>SHOP</div>
+      <div className={styles.noshopping}>
+        <p>You have not added anything to your cart</p>
+          <Link to='/categories/clothes'><div>SHOP</div></Link>
       </div>
     );
   };
@@ -54,10 +54,10 @@ const Cart = props => {
       }, 0);
     }
   };
-  const selectChange=(e)=>{
-    setSelect(Number(e.target.value))
-  }
-  return (
+  const selectChange = e => {
+    setSelect(Number(e.target.value));
+  };
+  return props.cart.length > 0 ? (
     <div className={styles.cart}>
       <div className={styles.div1}>
         <div className={styles.title}>
@@ -102,8 +102,8 @@ const Cart = props => {
                       className='fas fa-minus'
                     ></i>
                   </td>
-                  <td>${item.price}</td>
-                  <td>${item.price * item.quantity}</td>
+                  <td>₦{item.price}</td>
+                  <td>₦{item.price * item.quantity}</td>
                   <td>
                     <i
                       onClick={() => props.remove(item.id)}
@@ -128,20 +128,20 @@ const Cart = props => {
         <div className={styles.details}>
           <div>
             <span>ITEMS {calc.quantity()}</span>
-            <span>${calc.price()}</span>
+            <span>₦{calc.price()}</span>
           </div>
           <p>SHIPPING*</p>
           <select onChange={selectChange}>
-            <option value={1000}>STANDARD DELIVERY - $1000</option>
-            <option value={2000}>EXPRESS DELIVERY - $2000</option>
+            <option value={1000}>STANDARD DELIVERY - ₦1000</option>
+            <option value={2000}>EXPRESS DELIVERY - ₦2000</option>
           </select>
           <p>EMAIL*</p>
           <input placeholder='Enter your email' type='text' />
           {/* <div className={styles.apply}>APPLY</div> */}
           <div className={styles.divider}></div>
-          <div  className={styles.cost}>
+          <div className={styles.cost}>
             <span>TOTAL COST</span>
-            <span>${calc.price()+select}</span>
+            <span>₦{calc.price() + select}</span>
           </div>
           <div
             onClick={() => {
@@ -154,6 +154,8 @@ const Cart = props => {
         </div>
       </div>
     </div>
+  ) : (
+    noShopping()
   );
 };
 const mapStateToProps = ({ items: { cart } }) => {

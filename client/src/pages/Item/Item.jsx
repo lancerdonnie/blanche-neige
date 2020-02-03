@@ -57,7 +57,7 @@ const Item = props => {
         <div className={styles.rest}>
           <p>{category.toUpperCase()}</p>
           <p>{name.toUpperCase()}</p>
-          <p>{price}$</p>
+          <p>₦{price}</p>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Consequatur, totam dicta. Unde harum sint tenetur delectus debitis

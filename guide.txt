@@ -1,36 +1,20 @@
 nav z-index 3
-add category nav
 font awesome side nav
 angolia seach
-fix item page code
-logo
 oauth
-cart for each user localstorage
-signout
 rename stripe folder
 change all rems
-fix go crazy ziv
+fix go crazy div
 firebase rules
-fix signin popup
 move signin and logout to redux
-fix padding of nav cart 
-move context baxk to app
-spinner dark dolor
-favourites
-validation in signin and cart
-change color of alert
-add html for empty pages 
-make spinner span whole page
-add logocall to action
-bolder head1
+validation in signin and cart-
+make spinner span whole page-
+call to action
 forgot password
-change to naira
-fix add to cart
+fix add to cart-
 handle errors
-upload pictures and vectors
-adjust footer
-fix box picture shooting out arrivals
-change 480 to 425
+upload pictures and vectors-
+animation
 
 difficulties:tried to share firestore userdata but couldnt run action in the root component so i made a HOC
 

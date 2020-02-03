@@ -17,6 +17,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Favourites from './pages/Favourites/Favourites';
 import Contact from './pages/Contact/Contact';
+import AppState from './context/appContext/AppState';
+
 
 function App() {
   useEffect(() => {
@@ -29,6 +31,8 @@ function App() {
 
   return (
     <Provider store={store}>
+    <AppState>
+
       <div>
         <NavBar />
         <div className='container'>
@@ -46,6 +50,8 @@ function App() {
         </div>
         <Footer />
       </div>
+      </AppState>
+
     </Provider>
   );
 }

@@ -20,7 +20,7 @@ const NewArrivals = ({ random, handleClick }) => {
               </div>
               <div>
                 <p>{item.name}</p>
-                <p>{item.price}$</p>
+                <p>₦{item.price}</p>
               </div>
             </div>
           );

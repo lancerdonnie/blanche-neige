@@ -145,12 +145,14 @@
     }
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 425px) {
   .category {
     grid-template-columns: repeat(1, 70%);
     grid-auto-rows: 400px;
     .catitem1 {
+      flex-direction: column;
       grid-column: 1 / span 1;
+      grid-row: 1 / span 2;
     }
   }
 }

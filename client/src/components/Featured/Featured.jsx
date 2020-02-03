@@ -18,7 +18,7 @@ const Featured = ({ featured, handleClick }) => {
                 <img src={item.link} alt='' />
                 <div>
                   <p>{item.name}</p>
-                  <p>{item.price}$</p>
+                  <p>₦{item.price}</p>
                 </div>
               </div>
             )

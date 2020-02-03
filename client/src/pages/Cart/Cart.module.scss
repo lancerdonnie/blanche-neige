@@ -153,6 +153,28 @@ tbody {
   }
 }
 
+.noshopping {
+  height: 100vh;
+  background-color: var(--bg-color2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: var(--color);
+  text-align: center;
+  flex-direction: column;
+  & > a {
+    & > div {
+      cursor: pointer;
+      padding: 1rem 2rem;
+      background-color: var(--accent);
+      border-radius: 50px;
+      color: white;
+      margin-top: 4rem;
+    }
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .cart {
     flex-direction: column;
