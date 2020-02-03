@@ -19,7 +19,6 @@ import Favourites from './pages/Favourites/Favourites';
 import Contact from './pages/Contact/Contact';
 import AppState from './context/appContext/AppState';
 
-
 function App() {
   useEffect(() => {
     store.dispatch(getItems());
@@ -31,27 +30,25 @@ function App() {
 
   return (
     <Provider store={store}>
-    <AppState>
-
-      <div>
-        <NavBar />
-        <div className='container'>
-          <Switch>
-            <Route exact path='/' component={HomePage} />
-            <Route exact path='/categories/:cat/:id' component={Item} />
-            <Route path='/categories' component={Cat} />
-            <Route exact path='/signin' component={SignIn} />
-            <Route exact path='/cart' component={Cart} />
-            <Route exact path='/about' component={About} />
-            <Route exact path='/favourites' component={Favourites} />
-            <Route exact path='/contact' component={Contact} />
-          </Switch>
-          <ToastContainer autoClose={2000} />
+      <AppState>
+        <div>
+          <NavBar />
+          <div className='container'>
+            <Switch>
+              <Route exact path='/' component={HomePage} />
+              <Route exact path='/categories/:cat/:id' component={Item} />
+              <Route path='/categories' component={Cat} />
+              <Route exact path='/signin' component={SignIn} />
+              <Route exact path='/cart' component={Cart} />
+              <Route exact path='/about' component={About} />
+              <Route exact path='/favourites' component={Favourites} />
+              <Route exact path='/contact' component={Contact} />
+            </Switch>
+            <ToastContainer autoClose={2000} />
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
       </AppState>
-
     </Provider>
   );
 }
