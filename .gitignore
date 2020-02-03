@@ -27,6 +27,7 @@ yarn-error.log*
 /client/node_modules
 /client/src/Assets/
 /client/.env
+/client/build
 /scss
 /dist
 /assets
