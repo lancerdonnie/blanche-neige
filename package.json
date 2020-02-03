@@ -42,6 +42,5 @@
   "devDependencies": {
     "node-sass": "^4.13.1",
     "redux-devtools-extension": "^2.13.8"
-  },
-  "homepage": "https://adoring-clarke-1e1099.netlify.com/client"
+  }
 }
