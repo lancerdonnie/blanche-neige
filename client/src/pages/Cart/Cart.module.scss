@@ -152,3 +152,58 @@ tbody {
     margin: 0 auto;
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .cart {
+    flex-direction: column;
+    .div1 {
+      padding: unset;
+      padding-bottom: 1rem;
+    }
+  }
+}
+@media only screen and (max-width: 425px) {
+  .cart {
+    padding: unset;
+    .div1 {
+      .title {
+        padding: 0 1rem;
+        padding-top: 20px;
+      }
+      .main {
+        .content {
+          td {
+            div {
+            }
+            img {
+              margin-right: unset;
+              padding-bottom: 10px;
+            }
+          }
+        }
+      }
+      table {
+        thead {
+          tr {
+            & > :nth-child(3) {
+              display: none;
+            }
+          }
+        }
+        tbody {
+          tr {
+            td {
+              text-align: unset;
+            }
+            & > :nth-child(1) {
+              flex-direction: column;
+            }
+            & > :nth-child(3) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

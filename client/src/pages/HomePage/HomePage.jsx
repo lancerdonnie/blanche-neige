@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import './HomePage.module.scss';
+import styles from './HomePage.module.scss';
 import fashion from '../../Assets/fashion.svg';
 import undraw from '../../Assets/undraw.svg';
 import NewArrivals from '../../components/NewArrivals/NewArrivals';
@@ -16,7 +16,7 @@ const HomePage = props => {
   return auth === null ? (
     <Spinner big />
   ) : (
-    <Fragment>
+    <div className={styles.home}>
       <header>
         <p></p>
         <span>DRIP</span>
@@ -27,7 +27,7 @@ const HomePage = props => {
       <Featured handleClick={handleClick} featured={featured} />
       <Collection history={props.history} />
       <NewArrivals handleClick={handleClick} random={random} />
-    </Fragment>
+    </div>
   );
 };
 const mapStateToProps = ({ items: { featured, random }, log: { auth } }) => {

@@ -6,29 +6,53 @@ const Footer = ({ data }) => {
   return data !== '/signin' ? (
     <footer>
       <div className='socials'>
-        <Link to=''>
-          <i className='fab fa-soundcloud social'></i>
-        </Link>
-        <Link to=''>
+        <a
+          target='_blank'
+          rel='noopener noreferrer'
+          href='http://github.com/lancerdonnie'
+        >
+          <i className='fab fa-github social'></i>
+        </a>
+        <a
+          target='_blank'
+          rel='noopener noreferrer'
+          href='http://instagram.com/lancer_donnie'
+        >
           <i className='fab fa-instagram social'></i>
-        </Link>
-        <Link to=''>
+        </a>
+        <a
+          target='_blank'
+          rel='noopener noreferrer'
+          href='http://twitter.com/lancer_donnie'
+        >
           <i className='fab fa-twitter social'></i>
-        </Link>
-        <Link to=''>
+        </a>
+        <a
+          target='_blank'
+          rel='noopener noreferrer'
+          href='http://facebook.com/adedeji.ifeoluwa1'
+        >
           <i className='fab fa-facebook-f social'></i>
-        </Link>
+        </a>
       </div>
       <div className='site-map'>
         <p>Site Map</p>
-        <ul>
-          <li>Home</li>
-          <Link to=''>
-            <li>Shop</li>
-          </Link>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
+        <div>
+          <ul>
+            <Link to='/'>
+              <li>Home</li>
+            </Link>
+            <Link to='/categories/clothes'>
+              <li>Shop</li>
+            </Link>
+            <Link to='/about'>
+              <li>About</li>
+            </Link>
+            <Link to='/contact'>
+              <li>Contact</li>
+            </Link>
+          </ul>
+        </div>
       </div>
       <div>
         <p>Copyright 2020 BlancheNeige, LLC</p>

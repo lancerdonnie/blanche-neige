@@ -47,3 +47,26 @@
     }
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .favourites {
+    .fav {
+      grid-template-columns: repeat(2, 40%);
+      grid-auto-rows: 400px;
+      .favitem {
+        grid-column: unset;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 425px) {
+  .favourites {
+    .fav {
+      grid-template-columns: repeat(1, 70%);
+      grid-auto-rows: 400px;
+      .favitem {
+        grid-column: 1 / span 1;
+      }
+    }
+  }
+}

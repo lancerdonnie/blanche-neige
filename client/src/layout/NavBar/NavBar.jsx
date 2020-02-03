@@ -71,6 +71,9 @@ const NavBar = ({ user, history }) => {
             <i className='fab fa-gratipay'></i>
           </Link>
         )}
+        <Link to='/cart'>
+          <i className='fas fa-shopping-cart'></i>
+        </Link>
       </div>
       <div className={styles.icons}>
         <span onClick={handleAuth}>SIGN {user ? 'OUT' : 'IN'}</span>

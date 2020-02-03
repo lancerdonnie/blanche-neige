@@ -29,6 +29,8 @@ fix add to cart
 handle errors
 upload pictures and vectors
 adjust footer
+fix box picture shooting out arrivals
+change 480 to 425
 
 difficulties:tried to share firestore userdata but couldnt run action in the root component so i made a HOC
 

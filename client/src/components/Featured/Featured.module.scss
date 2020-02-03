@@ -1,22 +1,24 @@
 .featured {
   background-color: var(--bg-color3);
   padding: 60px;
-  height: var(--height);
+  min-height: var(--height);
   & > p {
     color: var(--color);
   }
   .featuredbox {
     display: flex;
     justify-content: center;
-
+    flex-wrap: wrap;
     & div {
       padding: 10px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      // align-items: center;
-      width: 200px;
+      min-width: 250px;
+      max-width: 280px;
       margin: 0 10px;
+      margin-bottom: 20px;
+
       p {
         padding-top: 5px;
         align-self: flex-start;
@@ -27,6 +29,16 @@
         max-height: 300px;
         vertical-align: middle;
         margin: auto;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .featured {
+    .featuredbox {
+      & div {
+        width: 300px;
       }
     }
   }

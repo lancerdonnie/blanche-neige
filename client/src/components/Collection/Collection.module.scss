@@ -9,7 +9,6 @@
     cursor: pointer;
     margin: 0 auto;
     max-width: 60%;
-    // max-height: 100%;
     display: grid;
     gap: 5px;
     grid-template-columns: repeat(4, 1fr);
@@ -43,6 +42,30 @@
       grid-area: item4;
       background: url('https://cdn.pixabay.com/photo/2013/10/14/19/53/hands-195653_640.jpg')
         center/cover;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .collection {
+    .collectionbox {
+      max-width: unset;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .collection {
+    height: unset;
+    .collectionbox {
+      max-width: unset;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 150px);
+      grid-template-areas:
+        'item1'
+        'item2'
+        'item3'
+        'item4';
     }
   }
 }

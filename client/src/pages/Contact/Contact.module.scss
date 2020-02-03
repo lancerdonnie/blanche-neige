@@ -61,6 +61,7 @@
           border-bottom: 1px solid #ccc;
           outline: none;
           background-color: var(--input);
+          padding: 1rem;
           &:focus {
             border-bottom: 1px solid blue;
           }
@@ -114,5 +115,65 @@
   }
   & > :nth-child(2) {
     flex: 2;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .contact {
+    height: 150vh;
+    & > :nth-child(1) {
+      padding-left: unset;
+      & > p {
+        text-align: center;
+      }
+      .box {
+        height: unset;
+        flex-direction: column;
+        & > :nth-child(1) {
+          input,
+          textarea {
+            margin-bottom: 15px;
+          }
+          & > :nth-child(1) {
+            margin-bottom: 15px;
+          }
+          & > :nth-child(2) {
+            margin-bottom: 15px;
+          }
+          & > :nth-child(2),
+          & > :nth-child(3) {
+            flex-direction: column;
+            input {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .contact {
+    height: 130vh;
+    & > :nth-child(1) {
+      .box {
+        width: 90%;
+        & > :nth-child(1) {
+          & > :last-child {
+            justify-content: center;
+          }
+        }
+        & > :nth-child(2) {
+          text-align: center;
+          & > div {
+            align-items: center;
+            & > :nth-child(4) {
+              width: unset;
+            }
+          }
+        }
+      }
+    }
   }
 }

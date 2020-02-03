@@ -48,7 +48,6 @@
   .catitem1 {
     display: flex;
     background: var(--linear);
-    // background:linear-gradient(to right, #091c29, #3A6073)
     grid-row: 1 / span 1;
     grid-column: 1 / span 2;
     .catitem11 {
@@ -94,7 +93,6 @@
   }
   .catitem {
     border-radius: 10px;
-
     position: relative;
     padding: 3rem 1.5rem;
     display: flex;
@@ -135,4 +133,24 @@
 #heart {
   color: red;
   text-shadow: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .category {
+    grid-template-columns: repeat(3, 30%);
+    grid-auto-rows: 400px;
+    .catitem1 {
+      // flex-direction: column;
+      grid-column: 1 / span 2;
+    }
+  }
+}
+@media only screen and (max-width: 480px) {
+  .category {
+    grid-template-columns: repeat(1, 70%);
+    grid-auto-rows: 400px;
+    .catitem1 {
+      grid-column: 1 / span 1;
+    }
+  }
 }
