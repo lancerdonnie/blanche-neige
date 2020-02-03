@@ -29,4 +29,4 @@ yarn-error.log*
 /dist
 /assets
 /SCSS
-.env.local
+.env
