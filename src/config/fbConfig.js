@@ -5,9 +5,9 @@ import 'firebase/auth';
 let key;
 if (process.env.NODE_ENV !== 'production') {
   key = process.env.REACT_APP_GOOGLE;
-  console.log('local', key);
 } else {
   key = process.env.GOOGLE;
+  console.log('env', process.env.GOOGLE, process.env);
   console.log('prod', key);
 }
 var firebaseConfig = {
