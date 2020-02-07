@@ -17,6 +17,7 @@ footer {
     width: 350px;
     & > div {
       ul {
+        justify-content: space-around;
         display: flex;
         margin: 0.5rem auto;
       }

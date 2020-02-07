@@ -12,7 +12,7 @@ const Cart = props => {
     var handler = window.PaystackPop.setup({
       key: 'pk_test_3b231318d6211d2ff6390a092bfd22e5238ee746',
       email: 'jideadedejifirst@gmail.com',
-      amount: calc.price(),
+      amount: calc.price()*100,
       currency: 'NGN',
       metadata: {
         custom_fields: [

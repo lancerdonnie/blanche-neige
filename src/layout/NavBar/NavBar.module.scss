@@ -124,6 +124,14 @@ nav {
   }
 }
 
+@media only screen and (max-width: 425px) {
+  nav {
+    .logo {
+      left: 30%;
+    }
+  }
+}
+
 #display {
   display: none;
 }
